@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="100dp"
+    android:paddingVertical="16dp"
+    android:paddingHorizontal="12dp"
+    android:layout_height="match_parent">
+<TextView
+    android:id="@+id/txtBtnView"
+    android:layout_width="match_parent"
+    android:text="Xem trước"
+    android:paddingVertical="20dp"
+    android:textSize="16sp"
+    android:layout_height="wrap_content"/>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <TextView
+        android:id="@+id/txtBtnAcp"
+        android:layout_width="match_parent"
+        android:text="Phê duyệt"
+        android:textSize="16sp"
+        android:paddingVertical="20dp"
+        android:layout_height="wrap_content"/>
+<com.google.android.material.divider.MaterialDivider
+    android:layout_width="match_parent"
+
+    android:layout_height="1dp"/>
+    <TextView
+        android:id="@+id/txtBtnReject"
+        android:layout_width="match_parent"
+        android:text="Xóa"
+        android:textColor="@color/red"
+        android:paddingVertical="20dp"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

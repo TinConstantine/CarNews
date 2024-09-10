@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/itemPostCardView"
+    android:orientation="vertical"
+    android:layout_margin="12dp"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgPost"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:id="@+id/tvPostTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Hung thủ thật sự đằng sau án 'tru di tam tộc' của Nguyễn Trãi"
+        />
+    <TextView
+        android:id="@+id/tvPostSubTitle"
+        android:layout_width="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        android:text="Ngoại trừ giả thuyết vợ Nguyễn Trãi giết vua, gioi nghien cuu chi ra nhieu bang chung cho thay tham an Le Chi Vien co the la ket qua cua mot cuoc"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:layout_alignParentStart="true"
+        android:id="@+id/tvAuthor"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/material_on_surface_emphasis_high_type"
+        android:text="Theo admin"/>
+
+
+
+
+</LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
