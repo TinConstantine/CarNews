@@ -38,7 +38,7 @@ public class LoginPage extends AppCompatActivity {
        viewPager.setAdapter(loginViewerAdapter);
        loadingOverlay = findViewById(R.id.screen_loading_overlay);
        new TabLayoutMediator(tabLayout, viewPager,((tab, i) -> {
-           if(i == 0)tab.setText("Đăng nhập");
+           if(i==0)tab.setText("Đăng nhập");
            if(i==1) tab.setText("Đăng ký");
        })).attach();
 

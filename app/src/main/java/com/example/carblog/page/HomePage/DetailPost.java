@@ -6,6 +6,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,7 @@ public class DetailPost extends AppCompatActivity {
     PostModel postModel;
     WebView wvContentDetailPost;
     ImageView imgDetailPostBack;
+    TextView txtTitleDetailPost;
 
     @SuppressLint({"SetJavaScriptEnabled", "NewApi"})
     @Override
@@ -30,7 +32,10 @@ public class DetailPost extends AppCompatActivity {
         postModel = getIntent().getSerializableExtra(HomePage.KEY_POST_MODEL, PostModel.class);
         imgDetailPostBack = findViewById(R.id.imgDetailPostBack);
         imgDetailPostBack.setOnClickListener(v -> onBackPressed());
+
         wvContentDetailPost = findViewById(R.id.wvContentDetailPost);
+        txtTitleDetailPost = findViewById(R.id.txtTitleDetailPost);
+        txtTitleDetailPost.setText(postModel.getTitle());
         wvContentDetailPost.getSettings().setJavaScriptEnabled(true); // Kích hoạt JavaScript nếu cần
         wvContentDetailPost.getSettings().setLoadWithOverviewMode(true);
         wvContentDetailPost.getSettings().setUseWideViewPort(true);
@@ -46,7 +51,7 @@ public class DetailPost extends AppCompatActivity {
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
                 // Phóng to nội dung để vừa màn hình
-                view.evaluateJavascript("document.body.style.zoom = '150%';", null);
+                view.evaluateJavascript("document.body.style.zoom = '120%';", null);
 
                 view.evaluateJavascript(
 

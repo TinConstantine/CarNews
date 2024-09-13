@@ -90,7 +90,6 @@ public class LoginViewModel extends ViewModel {
                 if(response.isSuccessful()){
                     UserManager.getInstance().setUser(response.body());
                     getUserInfo(UserManager.getInstance().getUser().getToken());
-
                 }
                 else{
                     isLogging.setValue(false);
@@ -112,6 +111,7 @@ public class LoginViewModel extends ViewModel {
                 if(response.isSuccessful()){
                     UserManager.getInstance().setUserInfoModel(response.body());
                     getRoleUser(UserManager.getInstance().getUserInfoModel().id);
+                    Log.d("Freeze",""+ UserManager.getInstance().getUserInfoModel().id);
                 }
                 else {
                     isLogging.setValue(false);
@@ -133,6 +133,7 @@ public class LoginViewModel extends ViewModel {
                 if(response.isSuccessful()){
                     UserManager.getInstance().setUserRole(response.body());
                     isLogin.setValue(true);
+                    Log.d("Freeze",  response.body().toString());
                     }
                     isLogging.setValue(false);
             }

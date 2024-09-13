@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.example.carblog.HomeActivity;
 import com.example.carblog.MainActivity;
@@ -23,6 +24,7 @@ import com.example.carblog.R;
 import com.example.carblog.api.ApiService;
 import com.example.carblog.model.user.LoginViewModel;
 import com.example.carblog.model.user.SingletonLoginViewModelFactory;
+import com.example.carblog.model.user.UserManager;
 import com.example.carblog.page.MenuPage.DetailCategoryPage.DetailCategoryPage;
 import com.example.carblog.page.MenuPage.LoginPage.LoginPage;
 import com.example.carblog.page.MenuPage.SearchPage.SearchPage;
@@ -47,6 +49,7 @@ public class MenuPage extends Fragment {
     private LinearLayout btnGoToLoginPage;
     private View accountFragment;
     private SearchView searchView;
+    private TextView txtAccountName, txtAccountRole;
 
 
 
@@ -58,6 +61,8 @@ public class MenuPage extends Fragment {
          menuLoadingSpinner = view.findViewById(R.id.menuLoadingSpinner);
          btnGoToLoginPage = view.findViewById(R.id.btnGoToLoginPage);
          accountFragment = view.findViewById(R.id.widgetAccount);
+        txtAccountName = view.findViewById(R.id.txtAccountName);
+        txtAccountRole = view.findViewById(R.id.txtAccountRole);
          searchView = view.findViewById(R.id.searchView);
             HomeActivity homeActivity = (HomeActivity) getActivity();
 
@@ -72,6 +77,7 @@ public class MenuPage extends Fragment {
         loginViewModel.getIsLogin().observe(requireActivity(),isLogin -> {
             Log.d("Freeze Viewmodel", isLogin.toString());
             if(isLogin){
+                setInfo();
                 btnGoToLoginPage.setVisibility(View.GONE);
                 accountFragment.setVisibility(View.VISIBLE);
             }
@@ -123,6 +129,7 @@ public class MenuPage extends Fragment {
             }
         });
 
+
     }
     private void handleFailure() {
         if (retryCount < maxRetries) {
@@ -136,5 +143,11 @@ public class MenuPage extends Fragment {
         }
     }
 
+    private void setInfo(){
+        if (UserManager.getInstance().getUserRole() != null && UserManager.getInstance().getUserInfoModel() != null) {
+            txtAccountRole.setText(UserManager.getInstance().getUserRole().role);
+            txtAccountName.setText(UserManager.getInstance().getUserInfoModel().name);
+        }
+    }
 
 }

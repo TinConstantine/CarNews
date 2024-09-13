@@ -1,7 +1,7 @@
 package com.example.carblog.api;
 
 public class CarBlogUrl {
-   public static final String BASEURL = "http://192.168.1.108/otofun/";//"http://otofun.sportsontheweb.net/"; //local: "http://192.168.138.1/otofun/"
+   public static final String BASEURL = "http://192.168.1.109/otofun/";//"http://otofun.sportsontheweb.net/"; //local: "http://192.168.138.1/otofun/"
    public static final String VOV1 = "https://str.vov.gov.vn/vovlive/vov1vov5Vietnamese.sdp_aac/playlist.m3u8";
    public static final String VOV2 = "https://str.vov.gov.vn/vovlive/vov2.sdp_aac/playlist.m3u8";
    public static final String VOV3 = "https://str.vov.gov.vn/vovlive/vov3.sdp_aac/playlist.m3u8";

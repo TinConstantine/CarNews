@@ -24,7 +24,7 @@
         <TextView
             android:id="@+id/txtAccountName"
             android:layout_width="wrap_content"
-            android:text="Mr Freeze"
+            android:text=""
             android:textSize="16dp"
             android:textStyle="bold"
             android:layout_height="wrap_content"/>
@@ -33,7 +33,7 @@
             android:layout_marginTop="4dp"
             android:id="@+id/txtAccountRole"
             android:layout_width="wrap_content"
-            android:text="Admin"
+            android:text=""
             android:layout_height="wrap_content"/>
     </LinearLayout>
 </LinearLayout>

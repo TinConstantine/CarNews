@@ -148,8 +148,9 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
                     public void onResponse(Call<Objects> call, Response<Objects> response) {
                         if(response.isSuccessful()){
                             Toast.makeText(requireActivity(), "Bài viết đã được xóa", Toast.LENGTH_LONG).show();
-                            viewModel.setOnReloadForNotyPage(true);
+
                             if(isDeleteHomePost) viewModel.setOnReloadForHomePage(true);
+                            else viewModel.setOnReloadForNotyPage(true);
                             dismiss();
 
                         }
@@ -158,6 +159,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
                     @Override
                     public void onFailure(Call<Objects> call, Throwable throwable) {
                         Log.d("Freeze Error", throwable.toString());
+                        dismiss();
                     }
                 });
     }

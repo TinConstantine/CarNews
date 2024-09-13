@@ -15,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.carblog.adapter.ViewPagerAdapter;
+import com.example.carblog.model.user.LoginViewModel;
 import com.example.carblog.model.user.UserManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -57,6 +58,8 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
 
         });
+
+
         bottomNavigationView.setOnItemSelectedListener(menuItem -> {
             if (menuItem.getItemId() == R.id.navHomePage) {
                 viewPager.setCurrentItem(0);
@@ -81,6 +84,11 @@ public class HomeActivity extends AppCompatActivity {
                 if(UserManager.getInstance().getUser()!=null){
                     imgLogout.setVisibility(View.VISIBLE);
                 }
+                LoginViewModel.getInstance().getIsLogin().observe(this, aBoolean -> {
+                    if(aBoolean){
+                        imgLogout.setVisibility(View.VISIBLE);
+                    }
+                });
 
             }
             return true;
@@ -114,6 +122,11 @@ public class HomeActivity extends AppCompatActivity {
                         if(UserManager.getInstance().getUser()!=null){
                             imgLogout.setVisibility(View.VISIBLE);
                         }
+                        LoginViewModel.getInstance().getIsLogin().observe(HomeActivity.this, aBoolean -> {
+                            if(aBoolean){
+                                imgLogout.setVisibility(View.VISIBLE);
+                            }
+                        });
                         break;
 
                 }

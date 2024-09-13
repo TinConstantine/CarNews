@@ -41,8 +41,16 @@
 
 
     </Toolbar>
-    <WebView
+    <TextView
         android:layout_below="@id/toolBarDetailPost"
+        android:id="@+id/txtTitleDetailPost"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <WebView
+        android:layout_below="@+id/txtTitleDetailPost"
         android:padding="12dp"
         android:id="@+id/wvContentDetailPost"
         android:layout_width="match_parent"

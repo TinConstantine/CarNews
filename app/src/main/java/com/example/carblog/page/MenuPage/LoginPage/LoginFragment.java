@@ -63,6 +63,7 @@ public class LoginFragment extends Fragment {
         view =  inflater.inflate(R.layout.fragment_login, container, false);
         txtUsername = view.findViewById(R.id.txtUsername);
         txtPassword = view.findViewById(R.id.txtPassword);
+
         btnLogin = view.findViewById(R.id.btnLogin);
         txtShowErrorLogin = view.findViewById(R.id.txtShowErrorLogin);
         checkBoxRememberAccount = view.findViewById(R.id.ckRememberAccount);

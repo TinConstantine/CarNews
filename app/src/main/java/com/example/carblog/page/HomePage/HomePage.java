@@ -125,6 +125,7 @@ public class HomePage extends Fragment {
         });
         viewModel.getOnReloadForHomePage().observe(requireActivity(),aBoolean -> {
             if(aBoolean){
+                Log.d("Freeze Reload", "Reload home page");
                 postAdapter.clearData();
                 initialPost();
                 viewModel.setOnReloadForHomePage(false);

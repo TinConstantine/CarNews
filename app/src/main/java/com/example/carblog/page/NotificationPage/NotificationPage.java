@@ -110,7 +110,7 @@ public class NotificationPage extends Fragment {
 
 
     private void getPost(int currentPage) {
-            if(UserManager.getInstance().getUserRole() == null || !UserManager.getInstance().getUserRole().role.equals("administrator")) {
+            if(UserManager.getInstance().getUserRole() == null || !UserManager.getInstance().getUserRole().isHaveRole()) {
                 swipeRefreshNotify.setRefreshing(false);
 
                 return;}

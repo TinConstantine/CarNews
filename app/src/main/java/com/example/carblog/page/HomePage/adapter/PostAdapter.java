@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.carblog.R;
 import com.example.carblog.model.PostModel;
+import com.example.carblog.model.user.LoginViewModel;
 import com.example.carblog.model.user.UserManager;
 
 import java.util.ArrayList;
@@ -88,9 +89,13 @@ public class PostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                   .centerCrop()
                   .into(((PostViewHolder) holder).imgPost);
           ((PostViewHolder) holder).itemPostCardView.setOnClickListener(v->iOnClickItem.onClick(p));
-          ((PostViewHolder) holder).itemPostCardView.setOnLongClickListener(v -> {
-              iOnLongClickItem.onLongClick(p);
-              return true;
+          LoginViewModel.getInstance().getIsLogin().observe(postFragment.requireActivity(), aBoolean -> {
+              if(aBoolean){
+                  ((PostViewHolder) holder).itemPostCardView.setOnLongClickListener(v -> {
+                      iOnLongClickItem.onLongClick(p);
+                      return false;
+                  });
+              }
           });
 
       }
